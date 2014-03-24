@@ -38,6 +38,55 @@
   text-align:center;
 }
 
+#game-board > div.flipped-over.element_H {
+  background-image: url('/assets/hydrogen.png');
+}
+
+#game-board > div.flipped-over.element_He {
+  background-image: url('/assets/helium.png');
+}
+
+#game-board > div.flipped-over.element_C {
+  background-image: url('/assets/carbon.png');
+}
+
+#game-board > div.flipped-over.element_N {
+  background-image: url('/assets/nitrogen.png');
+}
+
+#game-board > div.flipped-over.element_Ne {
+  background-image: url('/assets/neon.png');
+}
+
+#game-board > div.flipped-over.element_P {
+  background-image: url('/assets/phosphorus.png');
+}
+
+#game-board > div.flipped-over.element_Ca {
+  background-image: url('/assets/calcium.png');
+}
+
+#game-board > div.flipped-over.element_Li {
+  background-image: url('/assets/lithium.png');
+}
+
+#game-board > div.flipped-over.element_Mg {
+  background-image: url('/assets/magnesium.png');
+}
+
+#game-board > div.flipped-over.element_O {
+  background-image: url('/assets/oxygen.png');
+}
+
+#game-board > div.flipped-over.element_K {
+  background-image: url('/assets/potassium.png');
+}
+
+#game-board > div.flipped-over.element_Na {
+  background-image: url('/assets/sodium.png');
+}
+
+
 #game-board > div.flipped {
   background-image: url('/assets/argon.png');
   background-size: 100%;
@@ -47,17 +96,4 @@
 #game-board > div.flipped-over {
   background-color: white;
 }
-
-
-.element_H {
-  background-image: url('/assets/hydrogen.png');
-}
-
-
-
-
-
-
-
-
 
