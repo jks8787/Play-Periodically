@@ -1,6 +1,5 @@
 PlayPeriodically::Application.routes.draw do
-  resources :scores
-
-  devise_for :users
   root to: 'home#index'
+  devise_for :users
+  resources :scores
 end

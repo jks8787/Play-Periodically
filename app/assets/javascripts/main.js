@@ -19,6 +19,8 @@ Array.prototype.tileShuffle = function(){
 
 playPeriodically.newBoard = function(){
   var $div;
+  playPeriodically.renderScoreBoard();
+
   playPeriodically.flipBackCounter = 0;
   playPeriodically.tilesFlipped = 0;
   playPeriodically.gameArray.tileShuffle(),
@@ -40,11 +42,8 @@ playPeriodically.newBoard = function(){
   }
 
   $('#game-board').append($div.children());
-  playPeriodically.renderScoreBoard();
 
 };
-
-
 
 playPeriodically.setScore = function(value){
   playPeriodically.flipBackCounter += value ;
@@ -54,6 +53,15 @@ playPeriodically.setScore = function(value){
 
 playPeriodically.renderScoreBoard = function(value){
   if($('.score-board').length){
+    // save the score?
+    // var score_value = parseInt($('.score-board').html(););
+    $.ajax({
+      type: "POST",
+      url: '/scores',
+      dataType: 'json',
+      data: { value: playPeriodically.flipBackCounter },
+      success: console.log("sent it")
+    });
     $('score-board').empty();
   } else {
     var scoreEl;
