@@ -22,9 +22,13 @@ playPeriodically.newBoard = function(){
   playPeriodically.renderScoreBoard();
 
   playPeriodically.flipBackCounter = 0;
+
+  playPeriodically.setScore(0);
+
   playPeriodically.tilesFlipped = 0;
-  playPeriodically.gameArray.tileShuffle(),
-    // Container Div
+
+  // playPeriodically.gameArray.tileShuffle(),
+
     $div = $('<div />');
   for(var i = 0; i < playPeriodically.gameArray.length; i++){
     var tempDiv = $('<div />', {
@@ -60,9 +64,9 @@ playPeriodically.renderScoreBoard = function(value){
       url: '/scores',
       dataType: 'json',
       data: { value: playPeriodically.flipBackCounter },
-      success: console.log("sent it")
+      success:  $('score-board').empty()
     });
-    $('score-board').empty();
+
   } else {
     var scoreEl;
     $scoreEl = $('<p />');
