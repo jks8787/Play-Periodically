@@ -12,7 +12,21 @@
  *= require_tree .
  */
 
+body{
+  font-family: Helvetica, Arial, Sans-Serif;
+  background: white;
+  color:#808080;
+  padding: 5%;
+}
 
+#container{
+  width:1000px;
+  margin:auto;
+}
+
+p{
+  margin:0px;
+}
 
 #game-board{
   background: blue;
