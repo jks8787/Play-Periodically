@@ -38,7 +38,7 @@ p{
 }
 
 #game-board > div{
-  background-image: url('/assets/argon.png');
+  background-image: image-url('/assets/argon.png');
   background-size: 100%;
   background-repeat: no-repeat;
   border:purple 1px solid;
@@ -53,56 +53,56 @@ p{
 }
 
 #game-board > div.flipped-over.element_H {
-  background-image: url('/assets/hydrogen.png');
+  background-image: image-url('hydrogen.png');
 }
 
 #game-board > div.flipped-over.element_He {
-  background-image: url('/assets/helium.png');
+  background-image: image-url('helium.png');
 }
 
 #game-board > div.flipped-over.element_C {
-  background-image: url('/assets/carbon.png');
+  background-image: image-url('carbon.png');
 }
 
 #game-board > div.flipped-over.element_N {
-  background-image: url('/assets/nitrogen.png');
+  background-image: image-url('nitrogen.png');
 }
 
 #game-board > div.flipped-over.element_Ne {
-  background-image: url('/assets/neon.png');
+  background-image: image-url('neon.png');
 }
 
 #game-board > div.flipped-over.element_P {
-  background-image: url('/assets/phosphorus.png');
+  background-image: image-url('phosphorus.png');
 }
 
 #game-board > div.flipped-over.element_Ca {
-  background-image: url('/assets/calcium.png');
+  background-image: image-url('calcium.png');
 }
 
 #game-board > div.flipped-over.element_Li {
-  background-image: url('/assets/lithium.png');
+  background-image: image-url('lithium.png');
 }
 
 #game-board > div.flipped-over.element_Mg {
-  background-image: url('/assets/magnesium.png');
+  background-image: image-url('magnesium.png');
 }
 
 #game-board > div.flipped-over.element_O {
-  background-image: url('/assets/oxygen.png');
+  background-image: image-url('oxygen.png');
 }
 
 #game-board > div.flipped-over.element_K {
-  background-image: url('/assets/potassium.png');
+  background-image: image-url('potassium.png');
 }
 
 #game-board > div.flipped-over.element_Na {
-  background-image: url('/assets/sodium.png');
+  background-image: image-url('sodium.png');
 }
 
 
 #game-board > div.flipped {
-  background-image: url('/assets/argon.png');
+  background-image: image-url('argon.png');
   background-size: 100%;
   background-repeat: no-repeat;
 }
