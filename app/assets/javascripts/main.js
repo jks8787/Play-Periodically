@@ -4,6 +4,8 @@ playPeriodically.gameArray = ['H','H','He','He','C','C','N','N','Ne','Ne','P','P
 playPeriodically.gameValues = [];
 playPeriodically.tileIds = [];
 playPeriodically.tilesFlipped = 0;
+playPeriodically.flipBackCounter = 0;
+
 
 Array.prototype.tileShuffle = function(){
     var i = this.length, j, temp;
@@ -16,10 +18,10 @@ Array.prototype.tileShuffle = function(){
 };
 
 playPeriodically.newBoard = function(){
+  var $div;
+  playPeriodically.flipBackCounter = 0;
   playPeriodically.tilesFlipped = 0;
-
-  var output = '';
-    playPeriodically.gameArray.tileShuffle(),
+  playPeriodically.gameArray.tileShuffle(),
     // Container Div
     $div = $('<div />');
   for(var i = 0; i < playPeriodically.gameArray.length; i++){
@@ -38,24 +40,48 @@ playPeriodically.newBoard = function(){
   }
 
   $('#game-board').append($div.children());
+  playPeriodically.renderScoreBoard();
 
+};
+
+
+
+playPeriodically.setScore = function(value){
+  playPeriodically.flipBackCounter += value ;
+  var $scoreElement = $('.score-board');
+  $scoreElement.html( playPeriodically.flipBackCounter );
+};
+
+playPeriodically.renderScoreBoard = function(value){
+  if($('.score-board').length){
+    $('score-board').empty();
+  } else {
+    var scoreEl;
+    $scoreEl = $('<p />');
+    $scoreEl.addClass('score-board');
+    $('.container').append($scoreEl);
+  }
 };
 
 playPeriodically.gameTileFlip = function(tile, val){
   var $tile_obj = $(tile);
   $tile_obj.addClass('element_' + val);
   if(tile.innerHTML === "" && playPeriodically.gameValues.length < 2){
+
     $tile_obj.addClass("flipped-over");
     if(playPeriodically.gameValues.length === 0){
       playPeriodically.gameValues.push(val);
       playPeriodically.tileIds.push(tile.id);
+
     } else if(playPeriodically.gameValues.length === 1){
       playPeriodically.gameValues.push(val);
       playPeriodically.tileIds.push(tile.id);
+
       if(playPeriodically.gameValues[0] === playPeriodically.gameValues[1]){
         playPeriodically.tilesFlipped += 2;
         playPeriodically.gameValues = [];
            playPeriodically.tileIds = [];
+
         if(playPeriodically.tilesFlipped === playPeriodically.gameArray.length){
           alert("you got it!");
           $('#game-board').html('');
@@ -63,8 +89,8 @@ playPeriodically.gameTileFlip = function(tile, val){
         }
       } else {
         playPeriodically.flipBack = function(){
-            var $tile_1, $tile_2;
 
+            var $tile_1, $tile_2, $scoreElement;
             $tile_1 = $('#' + playPeriodically.tileIds[0]);
             $tile_2 = $('#' + playPeriodically.tileIds[1]);
 
@@ -79,7 +105,7 @@ playPeriodically.gameTileFlip = function(tile, val){
 
             playPeriodically.gameValues = [];
             playPeriodically.tileIds = [];
-
+            playPeriodically.setScore(1);
         };
 
         setTimeout(playPeriodically.flipBack, 700);
