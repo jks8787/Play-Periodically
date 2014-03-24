@@ -27,7 +27,7 @@ playPeriodically.newBoard = function(){
 
   playPeriodically.tilesFlipped = 0;
 
-  playPeriodically.gameArray.tileShuffle(),
+  // playPeriodically.gameArray.tileShuffle(),
 
     $div = $('<div />');
   for(var i = 0; i < playPeriodically.gameArray.length; i++){

@@ -1,5 +1,9 @@
 class ScoresController < ApplicationController
 
+  def index
+    @scores = Score.order(value: :asc)
+  end
+
   def create
     if user_signed_in?
       @score = Score.new(user_id: current_user.id)
