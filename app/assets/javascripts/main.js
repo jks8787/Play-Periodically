@@ -51,27 +51,19 @@ playPeriodically.newBoard = function(){
 
 playPeriodically.setScore = function(value){
   playPeriodically.flipBackCounter += value ;
-  var $scoreElement = $('.score-board');
+  var $scoreElement = $('#score-board');
   $scoreElement.html( playPeriodically.flipBackCounter );
 };
 
 playPeriodically.renderScoreBoard = function(value){
-  if($('.score-board').length){
-    // save the score?
-    // var score_value = parseInt($('.score-board').html(););
+  if($('#score-board').length){
     $.ajax({
       type: "POST",
       url: '/scores',
       dataType: 'json',
       data: { value: playPeriodically.flipBackCounter },
-      success:  $('score-board').empty()
+      success:  $('#score-board').empty()
     });
-
-  } else {
-    var scoreEl;
-    $scoreEl = $('<p />');
-    $scoreEl.addClass('score-board');
-    $('.container').append($scoreEl);
   }
 };
 
