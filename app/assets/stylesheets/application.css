@@ -24,7 +24,9 @@
 }
 
 #game-board > div{
-  /*background: url(bunny.jpg) no-repeat;*/
+  background-image: url('/assets/argon.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
   border:purple 1px solid;
   width:70px;
   height:70px;
@@ -35,3 +37,27 @@
   cursor:pointer;
   text-align:center;
 }
+
+#game-board > div.flipped {
+  background-image: url('/assets/argon.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#game-board > div.flipped-over {
+  background-color: white;
+}
+
+
+.element_H {
+  background-image: url('/assets/hydrogen.png');
+}
+
+
+
+
+
+
+
+
+
