@@ -17,9 +17,10 @@ Array.prototype.tileShuffle = function(){
     }
 };
 
+
+
 playPeriodically.newBoard = function(){
   var $div;
-  playPeriodically.renderScoreBoard();
 
   playPeriodically.flipBackCounter = 0;
 
@@ -55,15 +56,24 @@ playPeriodically.setScore = function(value){
   $scoreElement.html( playPeriodically.flipBackCounter );
 };
 
-playPeriodically.renderScoreBoard = function(value){
-  if($('#score-board').length){
-    $.ajax({
-      type: "POST",
-      url: '/scores',
-      dataType: 'json',
-      data: { value: playPeriodically.flipBackCounter },
-      success:  $('#score-board').empty()
-    });
+playPeriodically.postScore = function(value){
+  $.ajax({
+    type: "POST",
+    url: '/scores',
+    // beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('value'))},
+    dataType: 'json',
+    data: { value: playPeriodically.flipBackCounter },
+    success: playPeriodically.newGameScore,
+    error: function(jqXHR,textStatus, errorThrown){
+      console.log(errorThrown);
+    }
+  });
+};
+
+playPeriodically.newGameScore = function(data){
+  $('#score-board').empty();
+  if(data.hasOwnProperty("message")){
+    alert(data.message);
   }
 };
 
@@ -89,6 +99,7 @@ playPeriodically.gameTileFlip = function(tile, val){
         if(playPeriodically.tilesFlipped === playPeriodically.gameArray.length){
           alert("you got it!");
           $('#game-board').html('');
+          playPeriodically.postScore();
           playPeriodically.newBoard();
         }
       } else {
