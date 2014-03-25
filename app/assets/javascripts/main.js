@@ -22,6 +22,8 @@ Array.prototype.tileShuffle = function(){
 playPeriodically.newBoard = function(){
   var $div;
 
+  playPeriodically.resetBlockhighlight();
+
   playPeriodically.flipBackCounter = 0;
 
   playPeriodically.setScore(0);
@@ -131,13 +133,32 @@ playPeriodically.gameTileFlip = function(tile, val){
 
 playPeriodically.highlightBlock = function(elementSymbol){
   var elementClass, elementBlock, newClass;
-  debugger;
   elementClass = "element_block_" + elementSymbol;
   elementBlock = $('.' + elementClass );
   newClass = "matched " + elementClass;
   elementBlock.attr("class", newClass);
-
 };
+
+playPeriodically.resetBlockhighlight = function(){
+  var i, classes, newClass, elementBlocks = $(".matched");
+  if(elementBlocks.length){
+    for (i = 0; i < elementBlocks.length; i++) {
+      classes = $(elementBlocks[i]).attr('class').split(' ');
+      newClass = classes[1];
+      $(elementBlocks[i]).attr("class", newClass);
+    }
+  }
+};
+
+
+
+
+
+
+
+
+
+
 
 
 
