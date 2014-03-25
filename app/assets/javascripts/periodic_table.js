@@ -18,7 +18,7 @@ playPeriodically.periodicTableViz = function() {
   clist.vague = "#00B392";
 
 
-  d3.csv("assets/elements.csv", function(error, csv){
+  d3.csv("/elements.csv", function(error, csv){
     data = csv;
     main(data);
   });
