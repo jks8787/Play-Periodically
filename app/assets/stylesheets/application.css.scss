@@ -32,7 +32,7 @@ body{
 
 #game-board{
   background: #D4F3E9;
-  border: #5D5B6D 1px solid;
+  border: #9DC9BB 1px solid;
   border-radius: 20px;
   width:810px;
   height:540px;
@@ -47,7 +47,7 @@ body{
   text-align:center;
   background-image: image-url('logo.png');
   background-size: 100%;
-  border:#5D5B6D 1px solid;
+  border:#9DC9BB 1px solid;
   border-radius: 20px;
   width:100px;
   height:100px;
@@ -59,67 +59,6 @@ body{
   text-align:center;
 }
 
-#game-board > div.flipped-over.element_H {
-  background-image: image-url('hydrogen.png');
-  background-size: 100%;
-}
-
-#game-board > div.flipped-over.element_He {
-  background-image: image-url('helium.png');
-  background-size: 100%;
-}
-
-#game-board > div.flipped-over.element_C {
-  background-image: image-url('carbon.png');
-  background-size: 100%;
-}
-
-#game-board > div.flipped-over.element_N {
-  background-image: image-url('nitrogen.png');
-  background-size: 100%;
-}
-
-#game-board > div.flipped-over.element_Ne {
-  background-image: image-url('neon.png');
-  background-size: 100%;
-}
-
-#game-board > div.flipped-over.element_P {
-  background-image: image-url('phosphorus.png');
-  background-size: 100%;
-}
-
-#game-board > div.flipped-over.element_Si {
-  background-image: image-url('silicon.png');
-  background-size: 100%;
-}
-
-#game-board > div.flipped-over.element_Li {
-  background-image: image-url('lithium.png');
-  background-size: 100%;
-}
-
-#game-board > div.flipped-over.element_Mg {
-  background-image: image-url('magnesium.png');
-  background-size: 100%;
-}
-
-#game-board > div.flipped-over.element_O {
-  background-image: image-url('oxygen.png');
-  background-size: 100%;
-}
-
-#game-board > div.flipped-over.element_B {
-  background-image: image-url('boron.png');
-  background-size: 100%;
-}
-
-#game-board > div.flipped-over.element_Na {
-  background-image: image-url('sodium.png');
-  background-size: 100%;
-}
-
-
 #game-board > div.flipped {
   background-image: image-url('logo.png');
   background-size: 100%;
@@ -129,3 +68,92 @@ body{
   background-color: white;
 }
 
+#game-board > div.flipped-over.element_H {
+  background-image: image-url('hydrogen.png');
+  background-size: 100%;
+  border:#EDF46E 5px solid;
+  border-radius: 20px;
+}
+
+#game-board > div.flipped-over.element_He {
+  background-image: image-url('helium.png');
+  background-size: 100%;
+  border:#56BCDD 5px solid;
+  border-radius: 20px;
+}
+
+#game-board > div.flipped-over.element_C {
+  background-image: image-url('carbon.png');
+  background-size: 100%;
+  border:#FF573D 5px solid;
+  border-radius: 20px;
+}
+
+#game-board > div.flipped-over.element_N {
+  background-image: image-url('nitrogen.png');
+  background-size: 100%;
+  border:#FF573D 5px solid;
+  border-radius: 20px;
+}
+
+#game-board > div.flipped-over.element_Ne {
+  background-image: image-url('neon.png');
+  background-size: 100%;
+  border:#56BCDD 5px solid;
+  border-radius: 20px;
+}
+
+#game-board > div.flipped-over.element_P {
+  background-image: image-url('phosphorus.png');
+  background-size: 100%;
+  border:#FF573D 5px solid;
+  border-radius: 20px;
+}
+
+#game-board > div.flipped-over.element_Si {
+  background-image: image-url('silicon.png');
+  background-size: 100%;
+  border:#B9C5B9 5px solid;
+  border-radius: 20px;
+}
+
+#game-board > div.flipped-over.element_Li {
+  background-image: image-url('lithium.png');
+  background-size: 100%;
+  border:#56dda4 5px solid;
+  border-radius: 20px;
+}
+
+
+#game-board > div.flipped-over.element_Mg {
+  background-image: image-url('magnesium.png');
+  background-size: 100%;
+  border:#b6dd56 5px solid;
+  border-radius: 20px;
+}
+
+#game-board > div.flipped-over.element_O {
+  background-image: image-url('oxygen.png');
+  background-size: 100%;
+  border:#FF573D 5px solid;
+  border-radius: 20px;
+}
+
+#game-board > div.flipped-over.element_B {
+  background-image: image-url('boron.png');
+  background-size: 100%;
+  border:#B9C5B9 5px solid;
+  border-radius: 20px;
+}
+
+#game-board > div.flipped-over.element_Na {
+  background-image: image-url('sodium.png');
+  background-size: 100%;
+  border:#56dda4 5px solid;
+  border-radius: 20px;
+}
+
+.matched > rect{
+  stroke: black;
+  stroke-width: 4px;
+}

@@ -13,7 +13,7 @@ playPeriodically.periodicTableViz = function() {
   clist.Other_nonmetals = "#FF573D";
   clist.Halogens = "#CB71FD";
   clist.Other_metals = "#09C4E7";
-  clist.Transition_metals = "#5D5B6D";
+  clist.Transition_metals = "#B6B6BD";
   clist.Transition_metals2 = "#E4FF3C";
   clist.vague = "#00B392";
 
@@ -24,12 +24,12 @@ playPeriodically.periodicTableViz = function() {
   });
 
   function main(data){
-
     var group1 = svg.append("g").classed("group1", true);
 
     var blocks = group1.selectAll("g").data(data)
       .enter()
       .append("g")
+      .attr("class",function(d){ return "element_block_" + d.Symbol;})
       .attr("transform", function(d,i){
         var x = 20 + (48 * parseInt(d.group));
         var y = 20 + (48 * parseInt(d.row));
@@ -45,7 +45,7 @@ playPeriodically.periodicTableViz = function() {
               "rx": 5,
               "ry": 5
           })
-      .style("fill", function(d,i){return clist[d.named_type] });
+      .style("fill", function(d,i){return clist[d.named_type]; });
 
     var text_content = blocks.append("text")
       .attr({x:3, y:14})
@@ -57,7 +57,7 @@ playPeriodically.periodicTableViz = function() {
               "alignment-baseline": "middle",
               "font-family": "sans-serif"
           })
-      .text(function(d,i){return d.Symbol});
+      .text(function(d,i){return d.Symbol; });
   }
 };
 

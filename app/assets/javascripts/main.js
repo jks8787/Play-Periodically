@@ -28,7 +28,7 @@ playPeriodically.newBoard = function(){
 
   playPeriodically.tilesFlipped = 0;
 
-  // playPeriodically.gameArray.tileShuffle(),
+  playPeriodically.gameArray.tileShuffle(),
 
     $div = $('<div />');
   for(var i = 0; i < playPeriodically.gameArray.length; i++){
@@ -60,7 +60,6 @@ playPeriodically.postScore = function(value){
   $.ajax({
     type: "POST",
     url: '/scores',
-    // beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('value'))},
     dataType: 'json',
     data: { value: playPeriodically.flipBackCounter },
     success: playPeriodically.newGameScore,
@@ -92,6 +91,7 @@ playPeriodically.gameTileFlip = function(tile, val){
       playPeriodically.tileIds.push(tile.id);
 
       if(playPeriodically.gameValues[0] === playPeriodically.gameValues[1]){
+        playPeriodically.highlightBlock(playPeriodically.gameValues[0]);
         playPeriodically.tilesFlipped += 2;
         playPeriodically.gameValues = [];
            playPeriodically.tileIds = [];
@@ -128,3 +128,19 @@ playPeriodically.gameTileFlip = function(tile, val){
     }
   }
 };
+
+playPeriodically.highlightBlock = function(elementSymbol){
+  var elementClass, elementBlock, newClass;
+  debugger;
+  elementClass = "element_block_" + elementSymbol;
+  elementBlock = $('.' + elementClass );
+  newClass = "matched " + elementClass;
+  elementBlock.attr("class", newClass);
+
+};
+
+
+
+
+
+
