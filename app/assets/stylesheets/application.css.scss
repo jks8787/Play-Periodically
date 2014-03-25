@@ -30,6 +30,7 @@ body{
 #game-board{
   background: #D4F3E9;
   border: #5D5B6D 1px solid;
+  border-radius: 20px;
   width:800px;
   height:540px;
   padding:24px;
@@ -42,6 +43,7 @@ body{
   background-position-y: -20px;
   background-position-x: -45px;
   border:#5D5B6D 1px solid;
+  border-radius: 20px;
   width:70px;
   height:70px;
   float:left;
@@ -139,8 +141,9 @@ body{
 
 #game-board > div.flipped {
   background-image: image-url('argon.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position-y: -20px;
+  background-position-x: -45px;
 }
 
 #game-board > div.flipped-over {
