@@ -17,20 +17,19 @@ body{
   background: white;
   color:#808080;
   padding: 5%;
+  text-align: center;
 }
 
-#container{
+.container{
   width:1000px;
   margin:auto;
 }
 
-p{
-  margin:0px;
-}
+
 
 #game-board{
-  background: pink;
-  border: red 1px solid;
+  background: #D4F3E9;
+  border: #5D5B6D 1px solid;
   width:800px;
   height:540px;
   padding:24px;
@@ -39,9 +38,10 @@ p{
 
 #game-board > div{
   background-image: image-url('argon.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border:purple 1px solid;
+  background-size: 200px;
+  background-position-y: -20px;
+  background-position-x: -45px;
+  border:#5D5B6D 1px solid;
   width:70px;
   height:70px;
   float:left;
