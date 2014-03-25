@@ -1,4 +1,6 @@
-window.onload = function() {
+var playPeriodically= playPeriodically || {};
+
+playPeriodically.periodicTableViz = function() {
   var svg = d3.select("#periodic-table");
   var data;
 

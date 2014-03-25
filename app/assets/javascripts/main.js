@@ -1,6 +1,6 @@
 var playPeriodically= playPeriodically || {};
 
-playPeriodically.gameArray = ['H','H','He','He','C','C','N','N','Ne','Ne','P','P','Ca','Ca','Li','Li','Mg','Mg','O','O','K','K','Na','Na'];
+playPeriodically.gameArray = ['H','H','He','He','C','C','N','N','Ne','Ne','P','P','Si','Si','Li','Li','Mg','Mg','O','O','B','B','Na','Na'];
 playPeriodically.gameValues = [];
 playPeriodically.tileIds = [];
 playPeriodically.tilesFlipped = 0;
@@ -27,7 +27,7 @@ playPeriodically.newBoard = function(){
 
   playPeriodically.tilesFlipped = 0;
 
-  playPeriodically.gameArray.tileShuffle(),
+  // playPeriodically.gameArray.tileShuffle(),
 
     $div = $('<div />');
   for(var i = 0; i < playPeriodically.gameArray.length; i++){
