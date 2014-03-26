@@ -17,8 +17,6 @@ Array.prototype.tileShuffle = function(){
     }
 };
 
-
-
 playPeriodically.newBoard = function(){
   var $div;
 

@@ -20,10 +20,10 @@ playPeriodically.periodicTableViz = function() {
 
   d3.csv("/elements.csv", function(error, csv){
     data = csv;
-    main(data);
+    tableViz(data);
   });
 
-  function main(data){
+  function tableViz(data){
     var group1 = svg.append("g").classed("group1", true);
 
     var blocks = group1.selectAll("g").data(data)
@@ -55,7 +55,7 @@ playPeriodically.periodicTableViz = function() {
           })
       .style("fill", function(d,i){return clist[d.named_type]; });
 
-    var text_symbol = blocks.append("text")
+    var textSymbol = blocks.append("text")
         .attr({x:3, y:14})
           .style({
                 "fill": "#232323",
@@ -66,7 +66,7 @@ playPeriodically.periodicTableViz = function() {
             })
         .text(function(d,i){return d.Symbol; });
 
-     var text_atomic_number = blocks.append("text")
+     var textAtomicNumber = blocks.append("text")
         .attr({x:3, y:31})
           .style({
                 "fill": "#232323",
@@ -79,7 +79,7 @@ playPeriodically.periodicTableViz = function() {
         .text(function(d,i){return "At#:"+ d.At_num; })
         .attr('class', 'text-atomic-number');
 
-     var text_name = blocks.append("text")
+     var textName = blocks.append("text")
         .attr({x:3, y:46})
           .style({
                 "fill": "#232323",
@@ -93,10 +93,3 @@ playPeriodically.periodicTableViz = function() {
         .attr('class', 'text-name');
     }
 };
-
-// data[2].Mass
-// "6.9410000000"
-// data[2].Name
-// "Lithium"
-// data[2].type
-// "metals"
