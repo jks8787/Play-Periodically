@@ -35,11 +35,11 @@ playPeriodically.periodicTableViz = function() {
         var y = 30 + (58 * parseInt(d.row));
         return "translate(" + [x, y] + ")";
       })
-      .on("mouseover", function(town) {
+      .on("mouseover", function() {
         d3.select(this).select(".text-atomic-number").style("display", "block");
         d3.select(this).select(".text-name").style("display", "block");
      })
-     .on("mouseout", function(town) {
+     .on("mouseout", function() {
         d3.select(this).select(".text-atomic-number").style("display", "none");
         d3.select(this).select(".text-name").style("display", "none");
      });

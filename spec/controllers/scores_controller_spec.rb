@@ -1,5 +1,5 @@
-require 'spec_helper'
+# require 'spec_helper'
 
-describe ScoresController do
+# describe ScoresController do
 
-end
+# end
