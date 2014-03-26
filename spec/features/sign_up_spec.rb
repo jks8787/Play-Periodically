@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'user visitor signs up' do
+feature 'user signs up' do
 
   scenario 'successfully' do
     visit root_path
@@ -21,7 +21,7 @@ feature 'user visitor signs up' do
     fill_in 'Password confirmation', with: "some-password"
     click_button 'Sign up'
     expect(page).to have_content "Password confirmation doesn't match Password"
-    expect(page).to_not have_content "Signed in as"
+    expect(page).to_not have_content "Logged in as"
   end
 
 end
