@@ -38,15 +38,6 @@ body{
   padding-right: 30px;
 }
 
-#table-container{
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  width: 1010px;
-  height: 650px;
-  padding-top: 25px;
-}
-
 #game-board{
   background: #D4F3E9;
   border: #9DC9BB 1px solid;
@@ -83,6 +74,13 @@ body{
 
 #game-board > div.flipped-over {
   background-color: white;
+}
+
+#table-container {
+  position:absolute ;
+  left:50% ;
+  margin-left: -600px;
+  padding-bottom: 100px;
 }
 
 #game-board > div.flipped-over.element_H {
