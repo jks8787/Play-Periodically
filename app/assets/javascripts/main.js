@@ -30,7 +30,7 @@ playPeriodically.newBoard = function(){
 
   playPeriodically.tilesFlipped = 0;
 
-  playPeriodically.gameArray.tileShuffle(),
+  // playPeriodically.gameArray.tileShuffle(),
 
     $div = $('<div />');
   for(var i = 0; i < playPeriodically.gameArray.length; i++){
@@ -62,6 +62,7 @@ playPeriodically.postScore = function(value){
   $.ajax({
     type: "POST",
     url: '/scores',
+    beforeSend: function(xhr){xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
     dataType: 'json',
     data: { value: playPeriodically.flipBackCounter },
     success: playPeriodically.newGameScore,
@@ -74,7 +75,7 @@ playPeriodically.postScore = function(value){
 playPeriodically.newGameScore = function(data){
   $('#score-board').empty();
   if(data.hasOwnProperty("message")){
-    alert(data.message);
+    playPeriodically.popUp("#dialog-please-sign-in");
   }
 };
 
@@ -99,7 +100,7 @@ playPeriodically.gameTileFlip = function(tile, val){
            playPeriodically.tileIds = [];
 
         if(playPeriodically.tilesFlipped === playPeriodically.gameArray.length){
-          alert("you got it!");
+          playPeriodically.popUp("#dialog-you-got-it");
           $('#game-board').html('');
           playPeriodically.postScore();
           playPeriodically.newBoard();
@@ -150,9 +151,18 @@ playPeriodically.resetBlockhighlight = function(){
   }
 };
 
-
-
-
+playPeriodically.popUp = function(messageId) {
+    $( messageId ).dialog({
+      modal: true,
+      draggable: false,
+      resizable: false,
+      buttons: {
+        Ok: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+  };
 
 
 

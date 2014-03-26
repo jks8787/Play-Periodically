@@ -1,7 +1,7 @@
 class ScoresController < ApplicationController
 
   def index
-    @scores = Score.order(value: :desc)
+    @scores = Score.order(value: :asc)
   end
 
   def create
