@@ -21,6 +21,23 @@ body{
   text-align: center;
 }
 
+.navbar {
+  height: 80px;
+}
+
+.navbar-brand {
+  padding: 30px 30px;
+}
+
+.navbar-nav > li > a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.navbar-nav.navbar-right:last-child {
+  padding-right: 30px;
+}
+
 #table-container{
   display: block;
   margin: 0 auto;

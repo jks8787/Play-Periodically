@@ -8,24 +8,41 @@
 </head>
 <body>
 <div class="container">
-<% if notice %>
-  <p class="alert alert-notice"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-error"><%= alert %></p>
-<% end %>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <%= link_to'Home', root_path, :class => "navbar-brand"   %>
+        <%= link_to "Leader Board", scores_path, :class => "navbar-brand"  %>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li><%= link_to "Logged in as #{current_user.email}", root_url %></li>
 
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path  %> |
-  <%= link_to "Login", new_user_session_path  %>
-<% end %>
-<%= link_to "Leader Board", scores_path  %>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, id: 'sign-out' %></li>
+          <% else %>
+            <li><%= link_to "Sign up", new_user_registration_path, id: 'sign-up' %></li>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
+      </ul>
+    </div>
+  </div>
+  </nav>
 
-<%= yield %>
+  <% if notice %>
+    <p class="alert alert-notice"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-error"><%= alert %></p>
+  <% end %>
+
+  <%= yield %>
 </div>
 </body>
 </html>
