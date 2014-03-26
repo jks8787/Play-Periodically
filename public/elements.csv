@@ -1,4 +1,4 @@
-"At#","Mass","Name","Symbol","group","type","named_type","row"
+"At_num","Mass","Name","Symbol","group","type","named_type","row"
 "1","1.0079400000","Hydrogen","H","1","Hydrogen","Hydrogen","1"
 "2","4.0026020000","Helium","He","18","nonmetals","Noble_gas","1"
 "3","6.9410000000","Lithium","Li","1","metals","Alkali_metals","2"

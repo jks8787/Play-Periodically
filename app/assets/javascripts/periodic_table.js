@@ -31,33 +31,72 @@ playPeriodically.periodicTableViz = function() {
       .append("g")
       .attr("class",function(d){ return "element_block_" + d.Symbol;})
       .attr("transform", function(d,i){
-        var x = 20 + (48 * parseInt(d.group));
-        var y = 20 + (48 * parseInt(d.row));
+        var x = 30 + (58 * parseInt(d.group));
+        var y = 30 + (58 * parseInt(d.row));
         return "translate(" + [x, y] + ")";
-      });
+      })
+      .on("mouseover", function(town) {
+        d3.select(this).select(".text-atomic-number").style("display", "block");
+        d3.select(this).select(".text-name").style("display", "block");
+     })
+     .on("mouseout", function(town) {
+        d3.select(this).select(".text-atomic-number").style("display", "none");
+        d3.select(this).select(".text-name").style("display", "none");
+     });
 
     var rects = blocks.append("rect")
           .attr({
               "x": 0,
               "y": 0,
-              "width": 45,
-              "height": 45,
+              "width": 55,
+              "height": 55,
               "rx": 5,
               "ry": 5
           })
       .style("fill", function(d,i){return clist[d.named_type]; });
 
-    var text_content = blocks.append("text")
-      .attr({x:3, y:14})
-        .style({
-              "fill": "#232323",
-              "stroke-width": 0 + "px",
-              "font-size": 1.2 + "em",
-              "text-anchor": "right",
-              "alignment-baseline": "middle",
-              "font-family": "sans-serif"
-          })
-      .text(function(d,i){return d.Symbol; });
-  }
+    var text_symbol = blocks.append("text")
+        .attr({x:3, y:14})
+          .style({
+                "fill": "#232323",
+                "font-size": 1 + "em",
+                "text-anchor": "right",
+                "alignment-baseline": "middle",
+                "font-family": "sans-serif"
+            })
+        .text(function(d,i){return d.Symbol; });
+
+     var text_atomic_number = blocks.append("text")
+        .attr({x:3, y:31})
+          .style({
+                "fill": "#232323",
+                "font-size": 0.85 + "em",
+                "text-anchor": "right",
+                "alignment-baseline": "middle",
+                "font-family": "sans-serif",
+                "display": "none"
+            })
+        .text(function(d,i){return "At#:"+ d.At_num; })
+        .attr('class', 'text-atomic-number');
+
+     var text_name = blocks.append("text")
+        .attr({x:3, y:46})
+          .style({
+                "fill": "#232323",
+                "font-size": 0.85 + "em",
+                "text-anchor": "right",
+                "alignment-baseline": "middle",
+                "font-family": "sans-serif",
+                "display": "none"
+            })
+        .text(function(d,i){return d.Name; })
+        .attr('class', 'text-name');
+    }
 };
 
+// data[2].Mass
+// "6.9410000000"
+// data[2].Name
+// "Lithium"
+// data[2].type
+// "metals"
