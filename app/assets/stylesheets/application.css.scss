@@ -30,6 +30,10 @@ body{
   display: none;
 }
 
+.ui-dialog-titlebar-close {
+  visibility: hidden;
+}
+
 #site-header {
   font-weight: bold;
 }

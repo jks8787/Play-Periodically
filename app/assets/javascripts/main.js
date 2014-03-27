@@ -1,3 +1,7 @@
+$( document ).ready(function() {
+    playPeriodically.newBoard(playPeriodically.gameArray);
+});
+
 var playPeriodically= playPeriodically || {};
 
 playPeriodically.gameArray = ['H','H','He','He','C','C','N','N','Ne','Ne','P','P','Si','Si','Li','Li','Mg','Mg','O','O','B','B','Na','Na'];
@@ -17,7 +21,7 @@ Array.prototype.tileShuffle = function(){
     }
 };
 
-playPeriodically.newBoard = function(){
+playPeriodically.newBoard = function(cardArray){
   var $div;
 
   $('#game-board').html('');
@@ -30,10 +34,10 @@ playPeriodically.newBoard = function(){
 
   playPeriodically.tilesFlipped = 0;
 
-  playPeriodically.gameArray.tileShuffle(),
+  cardArray.tileShuffle();
 
-    $div = $('<div />');
-  for(var i = 0; i < playPeriodically.gameArray.length; i++){
+  $div = $('<div />');
+  for(var i = 0; i < cardArray.length; i++){
     var tempDiv = $('<div />', {
       id: 'tile_' + i
     });
@@ -41,7 +45,7 @@ playPeriodically.newBoard = function(){
     (function(){
       var pos = i;
       tempDiv.on('click', function() {
-        playPeriodically.gameTileFlip(this, playPeriodically.gameArray[pos]);
+        playPeriodically.gameTileFlip(this, cardArray[pos], cardArray);
       });
     }());
 
@@ -79,7 +83,7 @@ playPeriodically.newGameScore = function(data){
   }
 };
 
-playPeriodically.gameTileFlip = function(tile, val){
+playPeriodically.gameTileFlip = function(tile, val, cardArray){
   var $tile_obj = $(tile);
   $tile_obj.addClass('element_' + val);
   if(tile.innerHTML === "" && playPeriodically.gameValues.length < 2){
@@ -99,7 +103,7 @@ playPeriodically.gameTileFlip = function(tile, val){
         playPeriodically.gameValues = [];
            playPeriodically.tileIds = [];
 
-        if(playPeriodically.tilesFlipped === playPeriodically.gameArray.length){
+        if(playPeriodically.tilesFlipped === cardArray.length){
           playPeriodically.popUp("#dialog-you-got-it");
           playPeriodically.postScore();
           playPeriodically.newBoard();
@@ -151,22 +155,18 @@ playPeriodically.resetBlockhighlight = function(){
 };
 
 playPeriodically.popUp = function(messageId) {
-    $( messageId ).dialog({
-      modal: true,
-      draggable: false,
-      resizable: false,
-      buttons: {
-        Ok: function() {
-          $( this ).dialog( "close" );
-        }
+  $( messageId ).dialog({
+    draggable: false,
+    resizable: false,
+    closeOnEscape: false,
+    buttons: {
+      Ok: function() {
+        $( this ).dialog( "close" );
       }
-    });
-  };
-
-
-
-
-
+    },
+    open: function(event, ui) { $(".ui-dialog-titlebar-close", ui.dialog || ui).hide(); }
+  });
+};
 
 
 

@@ -1,3 +1,6 @@
+$( document ).ready(function() {
+    playPeriodically.periodicTableViz();
+});
 
 var playPeriodically= playPeriodically || {};
 
