@@ -5,8 +5,13 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'simplecov'
 require 'capybara/poltergeist'
+
 Capybara.javascript_driver = :poltergeist
 Capybara.default_wait_time = 5
+
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, js_errors: false)
+end
 
 SimpleCov.start 'rails'
 

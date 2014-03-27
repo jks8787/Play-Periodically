@@ -4,9 +4,13 @@ feature 'user can play a game', :js do
 
   scenario 'user plays the game till all matches reached' do
     visit root_path
-    # tile_selector_array = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23].map{ |t| "#tile_#{t}" }
-    # selector = %w(He Ne N H B P Si Li Mg O Na C).map{ |e| "#tile_1.element_#{e}.flipped-over" }.join(',')
-
+    page.execute_script("playPeriodically.newBoard(['H', 'H']);")
+    find('#tile_0').click
+    selector0 = "#tile_0.element_H.flipped-over"
+    expect(page).to have_css selector0
+    find('#tile_1').click
+    expect(page).to have_content "Please Sign in - if you want to save your scores!"
+    expect(page).to have_content "you matched all the elements!"
   end
 
 end
