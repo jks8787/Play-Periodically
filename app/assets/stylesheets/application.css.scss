@@ -72,7 +72,7 @@ body{
   display: block;
   list-style-type: none;
   list-style-position:inside;
-  background: #E4FF3C;
+  background: #FCFC03;
   border: yellow 1px solid;
   border-radius: 15px;
   width:610px;
@@ -87,7 +87,7 @@ body{
 }
 
 #game-board{
-  background: #E4FF3C;
+  background: #FCFC03;
   border: yellow 1px solid;
   border-radius: 15px;
   width:810px;
@@ -103,7 +103,7 @@ body{
   text-align:center;
   background-image: image-url('logo.png');
   background-size: 100%;
-  border:#9DC9BB 1px solid;
+  border:#FCC203 1px solid;
   border-radius: 15px;
   width:100px;
   height:100px;
@@ -134,7 +134,7 @@ body{
 #game-board > div.flipped-over.element_H {
   background-image: image-url('hydrogen.png');
   background-size: 100%;
-  border:#EDF46E 5px solid;
+  border:#69E22B 5px solid;
   border-radius: 15px;
 }
 
@@ -191,7 +191,7 @@ body{
 #game-board > div.flipped-over.element_Mg {
   background-image: image-url('magnesium.png');
   background-size: 100%;
-  border:#b6dd56 5px solid;
+  border:#5F64F5 5px solid;
   border-radius: 15px;
 }
 

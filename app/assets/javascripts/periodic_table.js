@@ -1,3 +1,4 @@
+
 var playPeriodically= playPeriodically || {};
 
 playPeriodically.periodicTableViz = function() {
@@ -5,16 +6,16 @@ playPeriodically.periodicTableViz = function() {
   var data;
 
   var clist = {};
-  clist.Hydrogen = "#EDF46E";
+  clist.Hydrogen = "#69E22B";
   clist.Noble_gas = "#56BCDD";
   clist.Alkali_metals = "#56DDA4";
-  clist.Alkaline_earth_metals = "#B6DD56";
+  clist.Alkaline_earth_metals = "#5F64F5";
   clist.Semiconductors = "#B9C5B9";
   clist.Other_nonmetals = "#FF573D";
   clist.Halogens = "#CB71FD";
   clist.Other_metals = "#09C4E7";
   clist.Transition_metals = "#B6B6BD";
-  clist.Transition_metals2 = "#E4FF3C";
+  clist.Transition_metals2 = "#BE80FF";
   clist.vague = "#00B392";
 
 
