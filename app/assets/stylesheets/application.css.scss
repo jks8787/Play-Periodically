@@ -46,6 +46,23 @@ body{
   padding-right: 30px;
 }
 
+
+#score-board-container{
+  position: fixed;
+  left: 60%;
+  top: 0%;
+  width: 400px;
+  height: 200px;
+  margin-left: 0px;
+  margin-top: 150px;
+}
+
+#explination-container {
+  right: 60%;
+  top: 0%;
+  width: 400px;
+}
+
 #score-leader-board {
   display: block;
   list-style-type: none;
