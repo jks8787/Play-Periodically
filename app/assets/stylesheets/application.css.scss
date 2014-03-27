@@ -46,6 +46,12 @@ body{
   padding-right: 30px;
 }
 
+#score-leader-board {
+  display: block;
+  list-style-type: none;
+  list-style-position:inside;
+}
+
 #game-board{
   background: #D4F3E9;
   border: #9DC9BB 1px solid;

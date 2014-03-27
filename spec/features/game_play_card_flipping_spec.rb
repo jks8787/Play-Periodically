@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'User can play the game', :js do
+feature 'User can flip the cards for the game', :js do
   scenario 'user can click on the cards - then they are flipped over' do
     visit root_path
     find('#tile_0').click
