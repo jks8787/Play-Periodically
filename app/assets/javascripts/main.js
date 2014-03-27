@@ -10,7 +10,6 @@ playPeriodically.tileIds = [];
 playPeriodically.tilesFlipped = 0;
 playPeriodically.flipBackCounter = 0;
 
-
 Array.prototype.tileShuffle = function(){
     var i = this.length, j, temp;
     while(--i > 0){

@@ -57,7 +57,7 @@ playPeriodically.periodicTableViz = function() {
               "rx": 5,
               "ry": 5
           })
-      .style("fill", function(d,i){return clist[d.named_type]; });
+          .style("fill", function(d,i){return clist[d.named_type]; });
 
     var textSymbol = blocks.append("text")
         .attr({x:3, y:14})
@@ -70,7 +70,7 @@ playPeriodically.periodicTableViz = function() {
             })
         .text(function(d,i){return d.Symbol; });
 
-     var textAtomicNumber = blocks.append("text")
+    var textAtomicNumber = blocks.append("text")
         .attr({x:3, y:31})
           .style({
                 "fill": "#232323",
@@ -83,7 +83,7 @@ playPeriodically.periodicTableViz = function() {
         .text(function(d,i){return "At#:"+ d.At_num; })
         .attr('class', 'text-atomic-number');
 
-     var textName = blocks.append("text")
+    var textName = blocks.append("text")
         .attr({x:3, y:46})
           .style({
                 "fill": "#232323",
