@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require jquery.ui.all
  *= require_tree .
  */
  @import "bootstrap";
@@ -46,27 +47,11 @@ body{
   padding-right: 30px;
 }
 
-
-#score-board-container{
-  position: fixed;
-  left: 60%;
-  top: 0%;
-  width: 400px;
-  height: 200px;
-  margin-left: 0px;
-  margin-top: 150px;
-}
-
-#explination-container {
-  right: 60%;
-  top: 0%;
-  width: 400px;
-}
-
-#score-leader-board {
+#score-leader-board li{
   display: block;
   list-style-type: none;
   list-style-position:inside;
+  padding: 5px;
 }
 
 #game-board{

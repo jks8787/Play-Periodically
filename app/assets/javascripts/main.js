@@ -20,6 +20,8 @@ Array.prototype.tileShuffle = function(){
 playPeriodically.newBoard = function(){
   var $div;
 
+  $('#game-board').html('');
+
   playPeriodically.resetBlockhighlight();
 
   playPeriodically.flipBackCounter = 0;
@@ -99,7 +101,6 @@ playPeriodically.gameTileFlip = function(tile, val){
 
         if(playPeriodically.tilesFlipped === playPeriodically.gameArray.length){
           playPeriodically.popUp("#dialog-you-got-it");
-          $('#game-board').html('');
           playPeriodically.postScore();
           playPeriodically.newBoard();
         }
