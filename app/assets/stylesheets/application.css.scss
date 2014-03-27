@@ -30,12 +30,18 @@ body{
   display: none;
 }
 
+#site-header {
+  font-weight: bold;
+}
+
 .navbar {
   height: 80px;
+  background: #09C4E7;
 }
 
 .navbar-brand {
   padding: 30px 30px;
+  font-weight: bold;
 }
 
 .navbar-nav > li > a {
@@ -52,6 +58,27 @@ body{
   margin-bottom: 2%;
 }
 
+#homepage-text-content {
+  margin-bottom: 10px;
+}
+
+#explination-container{
+}
+
+#score-board-container {
+}
+
+#score-leader-board {
+  display: block;
+  list-style-type: none;
+  list-style-position:inside;
+  background: #E4FF3C;
+  border: yellow 1px solid;
+  border-radius: 15px;
+  width:610px;
+  margin:0px auto;
+}
+
 #score-leader-board li{
   display: block;
   list-style-type: none;
@@ -60,9 +87,9 @@ body{
 }
 
 #game-board{
-  background: #D4F3E9;
-  border: #9DC9BB 1px solid;
-  border-radius: 20px;
+  background: #E4FF3C;
+  border: yellow 1px solid;
+  border-radius: 15px;
   width:810px;
   height:540px;
   margin:0px auto;
@@ -77,7 +104,7 @@ body{
   background-image: image-url('logo.png');
   background-size: 100%;
   border:#9DC9BB 1px solid;
-  border-radius: 20px;
+  border-radius: 15px;
   width:100px;
   height:100px;
   float:left;
@@ -108,56 +135,56 @@ body{
   background-image: image-url('hydrogen.png');
   background-size: 100%;
   border:#EDF46E 5px solid;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 #game-board > div.flipped-over.element_He {
   background-image: image-url('helium.png');
   background-size: 100%;
   border:#56BCDD 5px solid;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 #game-board > div.flipped-over.element_C {
   background-image: image-url('carbon.png');
   background-size: 100%;
   border:#FF573D 5px solid;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 #game-board > div.flipped-over.element_N {
   background-image: image-url('nitrogen.png');
   background-size: 100%;
   border:#FF573D 5px solid;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 #game-board > div.flipped-over.element_Ne {
   background-image: image-url('neon.png');
   background-size: 100%;
   border:#56BCDD 5px solid;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 #game-board > div.flipped-over.element_P {
   background-image: image-url('phosphorus.png');
   background-size: 100%;
   border:#FF573D 5px solid;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 #game-board > div.flipped-over.element_Si {
   background-image: image-url('silicon.png');
   background-size: 100%;
   border:#B9C5B9 5px solid;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 #game-board > div.flipped-over.element_Li {
   background-image: image-url('lithium.png');
   background-size: 100%;
   border:#56dda4 5px solid;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 
@@ -165,28 +192,28 @@ body{
   background-image: image-url('magnesium.png');
   background-size: 100%;
   border:#b6dd56 5px solid;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 #game-board > div.flipped-over.element_O {
   background-image: image-url('oxygen.png');
   background-size: 100%;
   border:#FF573D 5px solid;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 #game-board > div.flipped-over.element_B {
   background-image: image-url('boron.png');
   background-size: 100%;
   border:#B9C5B9 5px solid;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 #game-board > div.flipped-over.element_Na {
   background-image: image-url('sodium.png');
   background-size: 100%;
   border:#56dda4 5px solid;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .matched > rect{

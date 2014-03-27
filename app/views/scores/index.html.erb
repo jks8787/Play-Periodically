@@ -1,8 +1,8 @@
-<h1>Play-Periodically Leader Board!</h1>
-<p>Remeber! low Score is the best!</p>
+<h2>Leader Board</h2>
+<p><em>fewest missed is best!</em></p>
 <div id="score-leader-board" >
 <% @scores.each do |score| %>
-    <li> missed-matches: <%= score.value %> User: <%= User.find(score.user_id).email %> </li>
+    <li> User: <%= User.find(score.user_id).email %> only missed: <%= score.value %> </li>
   </ul>
 <% end %>
 </div>
