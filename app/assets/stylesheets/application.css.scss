@@ -129,10 +129,9 @@ body{
 }
 
 #table-container {
-  position:absolute ;
-  left:50% ;
-  margin-left: -600px;
-  padding-bottom: 100px;
+  position:relative ;
+  left:-60px ;
+  width: 1300px;
 }
 
 #game-board > div.flipped-over.element_H {
