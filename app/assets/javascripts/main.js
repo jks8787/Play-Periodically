@@ -21,7 +21,8 @@ Array.prototype.tileShuffle = function(){
 };
 
 playPeriodically.newBoard = function(cardArray){
-  var $div;
+  var $div, arrayLength;
+  arrayLength = cardArray.length;
 
   $('#game-board').html('');
 
@@ -33,10 +34,11 @@ playPeriodically.newBoard = function(cardArray){
 
   playPeriodically.tilesFlipped = 0;
 
-  cardArray.tileShuffle();
+  // cardArray.tileShuffle();
 
   $div = $('<div />');
-  for(var i = 0; i < cardArray.length; i++){
+
+  for(var i = 0; i < arrayLength; i++){
     var tempDiv = $('<div />', {
       id: 'tile_' + i
     });
@@ -105,7 +107,7 @@ playPeriodically.gameTileFlip = function(tile, val, cardArray){
         if(playPeriodically.tilesFlipped === cardArray.length){
           playPeriodically.popUp("#dialog-you-got-it");
           playPeriodically.postScore();
-          playPeriodically.newBoard();
+          playPeriodically.newBoard(playPeriodically.gameArray);
         }
       } else {
         playPeriodically.flipBack = function(){
