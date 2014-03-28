@@ -44,6 +44,10 @@ playPeriodically.periodicTableViz = function() {
         d3.select(this).select(".text-name").style("display", "block");
      })
      .on("mouseout", function() {
+        var isMatched = $(this).attr('class').split(' ').indexOf('matched');
+        if(isMatched !== -1) {
+          return;
+        }
         d3.select(this).select(".text-atomic-number").style("display", "none");
         d3.select(this).select(".text-name").style("display", "none");
      });
@@ -72,27 +76,11 @@ playPeriodically.periodicTableViz = function() {
 
     var textAtomicNumber = blocks.append("text")
         .attr({x:3, y:31})
-          .style({
-                "fill": "#232323",
-                "font-size": 0.85 + "em",
-                "text-anchor": "right",
-                "alignment-baseline": "middle",
-                "font-family": "sans-serif",
-                "display": "none"
-            })
         .text(function(d,i){return "At#:"+ d.At_num; })
         .attr('class', 'text-atomic-number');
 
     var textName = blocks.append("text")
         .attr({x:3, y:46})
-          .style({
-                "fill": "#232323",
-                "font-size": 0.85 + "em",
-                "text-anchor": "right",
-                "alignment-baseline": "middle",
-                "font-family": "sans-serif",
-                "display": "none"
-            })
         .text(function(d,i){return d.Name; })
         .attr('class', 'text-name');
     }

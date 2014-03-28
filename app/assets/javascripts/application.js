@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.all
+//= require jquery.ui.dialog
 //= require bootstrap
 //= require d3
 //= require_tree .

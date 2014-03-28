@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require jquery.ui.all
+ *= require jquery.ui.dialog
  *= require_tree .
  */
  @import "bootstrap";
@@ -222,4 +222,20 @@ body{
 .matched > rect{
   stroke: black;
   stroke-width: 4px;
+}
+
+/* Default style for all text elements */
+.text-name,
+.text-atomic-number {
+  fill: #232323;
+  font-size: 0.85em;
+  text-anchor: right;
+  alignment-baseline: middle;
+  font-family: sans-serif;
+  display: none;
+}
+
+/* When there is a match */
+.matched > text{
+  display: block;
 }

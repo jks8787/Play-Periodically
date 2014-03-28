@@ -34,7 +34,7 @@ playPeriodically.newBoard = function(cardArray){
 
   playPeriodically.tilesFlipped = 0;
 
-  cardArray.tileShuffle();
+  // cardArray.tileShuffle();
 
   $div = $('<div />');
 
